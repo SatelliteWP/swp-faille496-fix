@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin name: Patch temporaire de sécurité - 4.9.6
+Plugin name: Patch temporaire de sécurité - CVE 2018-12895
 Description: Corrige une vulnérabilité. Voir l'article <a href='https://blog.ripstech.com/2018/wordpress-file-delete-to-code-execution/'>Ripstech blogpost</a> pour plus d'information.
 Author: SatelliteWP
 Author URI: https://www.satellitewp.com
