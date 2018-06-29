@@ -1,13 +1,14 @@
 <?php
 /*
 Plugin name: Patch temporaire de sécurité - 4.9.6
-Description: See <a href='https://blog.ripstech.com/2018/wordpress-file-delete-to-code-execution/'>Ripstech blogpost</a> for details.
+Description: Corrige une vulnérabilité. Voir l'article <a href='https://blog.ripstech.com/2018/wordpress-file-delete-to-code-execution/'>Ripstech blogpost</a> pour plus d'information.
 Author: SatelliteWP
-Author URL: https://www.satellitewp.com
+Author URI: https://www.satellitewp.com
 Version: 1.0
 */
 
-add_filter( 'wp_update_attachment_metadata', 'swp_unlink_fix' );
+// Accès direct interdit
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 function swp_unlink_fix( $data ) {
     if ( isset( $data['thumb'] ) ) {
@@ -15,3 +16,5 @@ function swp_unlink_fix( $data ) {
     }
     return $data;
 }
+
+add_filter( 'wp_update_attachment_metadata', 'swp_unlink_fix' );
